@@ -16,3 +16,5 @@ C:\Desenvolvimento\FolderTracker\FolderTracker\obj\Debug\net7.0-windows\refint\F
 C:\Desenvolvimento\FolderTracker\FolderTracker\obj\Debug\net7.0-windows\FolderTracker.pdb
 C:\Desenvolvimento\FolderTracker\FolderTracker\obj\Debug\net7.0-windows\FolderTracker.genruntimeconfig.cache
 C:\Desenvolvimento\FolderTracker\FolderTracker\obj\Debug\net7.0-windows\ref\FolderTracker.dll
+C:\Desenvolvimento\FolderTracker\FolderTracker\bin\Debug\net7.0-windows\PYJ_DrawHelper.dll
+C:\Desenvolvimento\FolderTracker\FolderTracker\obj\Debug\net7.0-windows\FolderTracker.csproj.CopyComplete

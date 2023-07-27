@@ -1,4 +1,5 @@
-﻿namespace FolderTracker
+﻿
+namespace FolderTracker
 {
     partial class Form1
     {

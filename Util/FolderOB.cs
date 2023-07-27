@@ -14,5 +14,7 @@ namespace FolderTracker.Util
             FolderPath = folder.SelectSingleNode("Target")?.InnerText;
         }
         public string FolderPath { get; set; }
+
+
     }
 }

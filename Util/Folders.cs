@@ -16,26 +16,42 @@ namespace FolderTracker.Util
         public Folders(string path) {
             Path = @path;
             Path += @"\Folders.xml";
-            AddListFolderOB();
-            StartMaping();
+            bool controler = AddListFolderOB();
+            if (!controler)
+            {
+                return;
+            }
+            else
+            {
+                StartMaping();
+            }
         }
         public void StartMaping()
         {
             Maping maping = new Maping(folderOBs);
             maping.map();
         }
-        public void AddListFolderOB()
+        public bool AddListFolderOB()
         {
             XmlNodeList xmlNodeList = getXmlNodeList();
-            List<XmlNode> listFolderXml = getListXmlFolder(xmlNodeList);
-            folderOBs = getListObjFolderOB(listFolderXml);
+            if (xmlNodeList == null)
+            {
+                return false;
+            }
+            else
+            {
+                List<XmlNode> listFolderXml = getListXmlFolder(xmlNodeList);
+                folderOBs = getListObjFolderOB(listFolderXml);
+                return true;
+            }
         }
         public XmlNodeList getXmlNodeList()
         {
             XmlDocument xmlDocument = new XmlDocument();
-            if (Directory.Exists(Path))
+            if (!File.Exists(Path))
             {
                 MessageBox.Show("Folder.xml não existe", "aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
             }
             xmlDocument.Load(Path);
             XmlNodeList NodeList = xmlDocument.SelectNodes("//Folders/*");
@@ -55,6 +71,8 @@ namespace FolderTracker.Util
             }
             return nodeList;
         }
+
+
         public List<FolderOB> getListObjFolderOB(List<XmlNode> listFolders)
         {
             List<FolderOB> listObjFolderOB = new List<FolderOB>();
