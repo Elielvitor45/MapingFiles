@@ -24,10 +24,6 @@ namespace FolderTracker.Util
             Maping maping = new Maping(folderOBs);
             maping.map();
         }
-
-
-
-
         public void AddListFolderOB()
         {
             XmlNodeList xmlNodeList = getXmlNodeList();
@@ -45,10 +41,8 @@ namespace FolderTracker.Util
             XmlNodeList NodeList = xmlDocument.SelectNodes("//Folders/*");
             return NodeList;
         }
-
         public List<XmlNode> getListXmlFolder(XmlNodeList folder)
         {
-            
             List<XmlNode> nodeList = new List<XmlNode>();
             int cont = 0;
             foreach (XmlNode node in folder)
@@ -61,7 +55,6 @@ namespace FolderTracker.Util
             }
             return nodeList;
         }
-
         public List<FolderOB> getListObjFolderOB(List<XmlNode> listFolders)
         {
             List<FolderOB> listObjFolderOB = new List<FolderOB>();
